@@ -1,5 +1,6 @@
 package ru.example.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +25,11 @@ public class MainController {
     ) {
         this.solverService = solverService;
         this.requestService = requestService;
+    }
+
+    @GetMapping("/")
+    public String getIndex() {
+        return "Hello world!";
     }
 
     @PostMapping("/calculate")
